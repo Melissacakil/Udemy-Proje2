@@ -1,0 +1,368 @@
+@charset "utf-8";
+/*CSS Document */
+
+*{
+    margin:0 ; /* tüm nesnelerin iç ve dış boşlukları sıfırlanır.*/
+    padding: 0;
+}
+
+body{
+    font-family: "Open Sans", sans-serif; /*body kısmındaki tüm etiketlere standart yazı tipi atar.*/ 
+}
+.banner .slide img{
+    height:100vh;/* ekranımızı %100 kaplar */
+}
+.carousel-caption{
+    position:absolute; /* konumunu tüm nesnelerden bağımsız yaptık*/
+    top: 50%;
+    transform: translateY(-50%) ; /*top 50% yaptığımızda tam olarak ortalanmadığını görürüz son aşamada bunu yaptığımızda yine tam olarak istediğimiz konuma  gelmez*/
+    bottom:auto !important;/*bootstrapten gelen bottom değerini kapatmak için yaparız. Böylece yazı istediğimiz konuma gelir.*/
+    max-width: 400px;
+    margin: auto; /*sağdan soldan yukarıdan aşağıdan otomatik boşluk vererek içeriği ortalar*/
+} 
+.carousel span{
+    font-size: 14px;
+}
+.carousel h5{
+    font-size: 36px;
+    font-weight: 700px;
+}
+.carousel p{
+    font-size: 13px;
+    line-height: 20px; /*satır yüksekliği verir*/
+}
+.carousel a{
+    border-radius: 20px; /*köşeleri ovalleştirir.*/
+}
+
+@media (max-width:992px) { 
+    .banner .slide img{
+        height: 70vh;
+    }
+}
+.menu{
+    position: fixed;
+    top: 0;
+    z-index:10 ; /*çakışan yazılar veya resimler olduğunda diğer nesnelerin üstünde kalması için*/
+}
+.navbar {
+    max-width: 1000px; /*ekranımızı tam olarak kaplaması için*/
+}
+.navbar-brand {
+    font-family: 'Norican', cursive;
+    font-size: 38px !important;
+}
+.navbar a{
+    color: white;
+    font-size: 13px;
+    margin-right:10px ;
+}
+.active {
+    background: #f7f7f7 !important;
+    color: #121212 !important;
+} /*active etiketinden sonra yazılarımız siyaha dönmedi bunun için bir sınıf daha açıyoruz*/
+
+.black {
+    color: black !important; 
+
+}
+@media (max-width:992px) { 
+    .menu{
+        background:#f7f7f7 ;
+    }
+}
+.navbar a{
+    color: black !important;
+}
+.bolum1 {
+    background: #f2f2f2;
+    padding: 80px 0;
+    text-align: center;
+}
+.bolum1 h3{
+    font-size: 17px;
+    color: #121212;
+    font-weight: 700;
+}
+.bolum1 .cizgi{
+    width: 60px ;
+    height: 10px ;
+    color: black ;
+    margin: auto ;
+    margin-bottom: 50px;
+}
+.bolum1 .icerik{
+    padding: 15px;
+    background: white;
+    margin-bottom: 20px;
+    transition:0.5s;
+}
+.bolum1 i{
+    font-size: 32px;
+    color: #298f01 ;
+    margin-bottom: 15px;
+}
+.bolum1 h5{
+    font-size:16px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 15px;
+}
+.bolum1 p{
+    font-size: 13px;
+    color: #5a5a5a;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+}
+.bolum1 .icerik:hover{
+    background: #298f01;
+}
+.bolum1 .icerik:hover i{
+    color: #fff;
+}
+.bolum1 .icerik:hover h5{
+    color: #fff;
+}
+.bolum1 .icerik:hover p{
+    color: #fff;
+}
+.bolum2{
+    background: url("img/what-we-do-bg.png");
+    background-size: cover; /*resmin ekrana tam sığması için kullanılır.*/
+    padding: 80px 0px;
+}
+.bolum2 h4{
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    line-height: 30px;
+    margin-bottom: 25px;
+    color: #fff;
+}
+.bolum2 p{
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    line-height: 25px;
+    margin-bottom: 25px;
+    color: #fff;
+}
+.bolum2 .btn{
+    border-radius: 25px;
+    margin: 40px 0;
+} 
+.bolum2 img{
+    width: 100%;
+
+}
+.bolum3{
+    background: #f2f2f2;
+    padding: 80px 0;}
+
+.bolum3 .cizgi{
+    width: 60px ;
+    height: 10px ;
+    color: black ;
+    margin: auto ;
+    margin-bottom: 50px;
+}
+.bolum3 h3{
+    font-size: 17px;
+    font-weight: 700;
+    color: #121212;
+}
+.bolum3 a{
+    color: #5a5a5a;
+}
+.bolum3.active{
+    color: #6e8a0a !important;
+    background: none;
+}
+.bolum3 img{
+    width: 100%; /*dışındaki kapsayıcıyı geçmesin diye*/
+    height: 100%;
+}
+.bolum3 .kapsayici {
+    position: relative;
+    top: 0;
+    left: 0;
+    max-width: 300px;
+    margin-bottom: 10px;
+}
+.bolum3 .hover-efekt{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #6e8a8a;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+.bolum3 .hover-efekt i{
+    padding: 10px;
+    border: 2px solid #fff;
+    border-radius: 100%;
+    background-color: #fff;
+    color:#6e8a8a;
+}
+.bolum3 .kapsayici:hover .hover-efekt{
+     opacity: 0.7;
+    }
+.bolum4{
+    padding: 80px 0px;
+    background: url("img/blog-bg.png");
+    background-size:cover;
+}
+
+.bolum4 h3{
+    color: #fff;
+    text-align: center;
+    font-size: 17px;
+    font-weight: 700;    
+}
+.bolum4 .cizgi{
+    width: 60px ;
+    height: 10px ;
+    color:#fff;
+    margin: auto ;
+    margin-bottom: 50px;
+}
+.bolum4 img{
+    width: 100%;
+ }
+ .bolum4 .resim{
+     position: relative;/*Kapsayıcıyı relative yapmamızın sebebi içindeki nesne başka bir yere kaymasın sınırlarını bilsin diye */
+     margin-bottom: 5px;
+ }
+ .bolum4 .resimyazi{
+     position: absolute;
+     left: 0;
+     bottom: 0;
+     background-color: rgba(0,0,0,0.6);
+     width: 100%;
+
+}
+.bolum4 h4{
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0,5px;
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.bolum4 span{
+    font-size: 12;
+    color: #fff;
+    letter-spacing: 0.3px;
+    margin-left: 10px;
+}
+.bolum5{
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+.bolum5 .etiket p{
+    font-size: 24px;
+    font-weight: 700;
+    color:#a2cf8d ;
+}
+.bolum5 .etiket span{
+    margin-top: 10px;
+    font-size:13px;
+    letter-spacing: 0.5px;
+    color:#7a7a7a;
+}
+.bolum5 .etiket{
+    background: #f2f2f2;
+    text-align: center;
+    padding:20px 20px;
+    margin-bottom: 10px;
+}
+footer{
+    background: url("img/contact-bg.png");  
+    background-size: cover;
+    margin-top: 80px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+footer h3{
+   color: #fff;
+   text-align: center;
+   font-size: 25px;
+   font-weight: 700; 
+}
+footer .cizgi{
+    width: 60px ;
+    height: 10px ;
+    color:#fff;
+    margin: auto ;
+    margin-bottom: 50px;
+}
+footer img{
+    width: 100%;
+}
+footer input{
+    color: #fff;
+    font-size: 13px;
+    background-color: rgba(250,250,250,0.1);
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 35px;
+    padding-left: 15px;/*yazacağımız yazı kutunun hemen yanından başlamasın biraz boşuk bıralım istersek*/
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+footer textarea{
+    color: #fff;
+    font-size: 13px;
+    background-color: rgba(250,250,250,0.1);
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 220px;
+    padding-left: 15px;/*yazacağımız yazı kutunun hemen yanından başlamasın biraz boşuk bıralım istersek*/
+    margin-bottom: 30px;
+    padding-top: 15px;
+}
+footer button{
+    background: #a2cf8d;
+    padding: 12px 18px;
+    color: #fff;
+    font-size: 11px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    border-radius:30px;
+    border: none;
+    transition: 0.5s;
+    margin-bottom: 50px;
+}
+footer button:hover{
+    background:#8ecf8d ;
+}
+footer .altbolum{
+    display: flex;
+    justify-content:space-between ;
+    width: 100%;
+    padding: 25px;
+    background: #000;
+}
+footer .altbolum p{
+    color: white;
+    font-size: 12px;
+    margin-top: 25px;
+}
+footer .altbolum i{
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+    background: #8ecf8d;
+    border-radius: 100%;
+    line-height: 36px;
+    text-align: center;
+    margin-right: 10px;
+}
